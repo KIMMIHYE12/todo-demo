@@ -27,8 +27,6 @@ function App() {
       });
       if (response.status === 200) {
         console.log("성공");
-        setTodoValue("");
-        getTasks();
       } else {
         throw new Error("task can not be added");
       }

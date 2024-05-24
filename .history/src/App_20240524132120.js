@@ -19,24 +19,6 @@ function App() {
     setTodoList(response.data.data);
   };
 
-  const addTask = async () => {
-    try {
-      const response = await api.post("/tasks", {
-        task: todoValue,
-        isComplete: false,
-      });
-      if (response.status === 200) {
-        console.log("성공");
-        setTodoValue("");
-        getTasks();
-      } else {
-        throw new Error("task can not be added");
-      }
-    } catch (err) {
-      console.log("error", err);
-    }
-  };
-
   useEffect(() => {
     getTasks();
   }, []);

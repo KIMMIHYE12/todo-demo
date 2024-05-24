@@ -6,7 +6,7 @@ const TodoBoard = ({ todoList }) => {
     <div>
       <h2>Todo List</h2>
       {todoList.length > 0 ? (
-        todoList.map((item) => <TodoItem item={item} />)
+        todoList.map((item) => <TodoItem item={tiem} />)
       ) : (
         <h2>There is no Item to show</h2>
       )}

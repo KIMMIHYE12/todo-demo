@@ -6,7 +6,7 @@ const TodoItem = ({ item }) => {
     <Row>
       <Col xs={12}>
         <div className={`todo-item`}>
-          <div className='todo-content'>{item.task}</div>
+          <div className='todo-content'>밥먹기</div>
 
           <div>
             <button className='button-delete'>삭제</button>

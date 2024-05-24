@@ -19,24 +19,6 @@ function App() {
     setTodoList(response.data.data);
   };
 
-  const addTask = async () => {
-    try {
-      const response = await api.post("/tasks", {
-        task: todoValue,
-        isComplete: false,
-      });
-      if (response.status === 200) {
-        console.log("성공");
-        setTodoValue("");
-        getTasks();
-      } else {
-        throw new Error("task can not be added");
-      }
-    } catch (err) {
-      console.log("error", err);
-    }
-  };
-
   useEffect(() => {
     getTasks();
   }, []);
@@ -53,9 +35,7 @@ function App() {
           />
         </Col>
         <Col xs={12} sm={2}>
-          <button className='button-add' onClick={addTask}>
-            추가
-          </button>
+          <button className='button-add'>추가</button>
         </Col>
       </Row>
 
