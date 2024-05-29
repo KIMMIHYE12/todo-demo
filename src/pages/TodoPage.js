@@ -11,8 +11,8 @@ function App() {
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
-    console.log("rrrr", response);
     setTodoList(response.data.data);
+    console.log(response);
   };
 
   const addTask = async () => {
