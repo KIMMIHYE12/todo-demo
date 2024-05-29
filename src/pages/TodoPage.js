@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-import TodoBoard from "./components/TodoBoard";
-
+import TodoBoard from "../components/TodoBoard";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
