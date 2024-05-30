@@ -61,7 +61,7 @@ function TodoPage({ user, setUser }) {
     }
   };
 
-  const handleLogout = async (id) => {
+  const handleLogout = async () => {
     try {
       sessionStorage.removeItem("token");
       setUser(null);
