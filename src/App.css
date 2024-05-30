@@ -86,3 +86,11 @@ button {
   color: #ffffff;
   border: none;
 }
+
+.btn_logout {
+  margin-top: 2rem;
+  border: 0;
+  color: lightblue;
+  background: none;
+  text-decoration: underline;
+}

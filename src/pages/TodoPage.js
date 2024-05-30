@@ -4,10 +4,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import api from "../utils/api";
+import { useNavigate } from "react-router-dom";
 
-function App() {
+function TodoPage({ user, setUser }) {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
+  const navigate = useNavigate();
 
   const getTasks = async () => {
     const response = await api.get("/tasks");
@@ -59,11 +61,28 @@ function App() {
     }
   };
 
+  const handleLogout = async (id) => {
+    try {
+      sessionStorage.removeItem("token");
+      setUser(null);
+      navigate("/");
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   useEffect(() => {
     getTasks();
   }, []);
   return (
     <Container>
+      <Row>
+        <Col xs={12} sm={10}>
+          <button onClick={handleLogout} className='btn_logout'>
+            로그아웃
+          </button>
+        </Col>
+      </Row>
       <Row className='add-item-row'>
         <Col xs={12} sm={10}>
           <input
@@ -90,4 +109,4 @@ function App() {
   );
 }
 
-export default App;
+export default TodoPage;
